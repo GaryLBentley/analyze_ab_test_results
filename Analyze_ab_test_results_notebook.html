@@ -17052,7 +17052,7 @@ $$<p>where,</p>
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
 <span class="c1"># ToDo: Complete the sm.stats.proportions_ztest() method arguments</span>
-<span class="n">z_score</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">proportions_ztest</span><span class="p">([</span><span class="n">convert_old</span><span class="p">,</span> <span class="n">convert_new</span><span class="p">],</span> <span class="p">[</span><span class="n">n_old</span><span class="p">,</span> <span class="n">n_new</span><span class="p">],</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;smaller&#39;</span><span class="p">)</span>
+<span class="n">z_score</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">proportions_ztest</span><span class="p">([</span><span class="n">convert_old</span><span class="p">,</span> <span class="n">convert_new</span><span class="p">],</span> <span class="p">[</span><span class="n">n_new</span><span class="p">,</span> <span class="n">n_old</span><span class="p">],</span> <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;smaller&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z_score</span><span class="p">,</span> <span class="n">p_value</span><span class="p">)</span>
 </pre></div>
 
@@ -17073,7 +17073,7 @@ $$<p>where,</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1.3109241984234394 0.9050583127590245
+<pre>1.2616957421858055 0.8964708551967226
 </pre>
 </div>
 </div>
@@ -17104,9 +17104,9 @@ $$<p>where,</p>
 <p><b>Answer:</b> For this test, which is a right-tailed test, we will reject the null hypothesis if $Z_{score}$ &gt; $Z_{\alpha}$.<br>
 $Z_{\alpha}$ or $Z_{0.05}$ equals 1.645<br></p>
 <br>
-Based on the above results, our $Z_{score}$ is 1.311 which is less than 1.645, so we fail to reject our null hypothesis.<br>
+Based on the above results, our $Z_{score}$ is 1.262 which is less than 1.645, so we fail to reject our null hypothesis.<br>
 <br>
-The reported p_value is 0.095 which is less than the original value of 0.9050 calculated above. This is because we originally set the p_old & p_new to the same value:<br>
+The reported p_value is 0.095 which is less than the original value of 0.8964 calculated above. This is because we originally set the p_old & p_new to the same value:<br>
 $p_{new}$ = $p_{old}$ = $p_{population}$<br><br>
 Since the old_page actually converted more users than the new_page, the true p_old and p_new are different, resulting in a different p_value.
 
@@ -18308,7 +18308,7 @@ Now lets take a look at how page interacts with country.
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><b>Conclusion:</b><br>
-In order to reccommend that the new page should replace the old page, we want a 95% confidence level that this is the case. The value used to determin this is known as the $P_{value}$, and it should be less than or equal to 0.05. This benchmark is known as the Type I Error Rate. In the bootstrap sample of the distribution of means, we saw $P_{0.9047}$. The two-sample Z-Test generated $P_{0.9050}$, and in the Logistic Regression testing, the P-Value was $P_{0.1912}$.<br><br>
+In order to reccommend that the new page should replace the old page, we want a 95% confidence level that this is the case. The value used to determin this is known as the $P_{value}$, and it should be less than or equal to 0.05. This benchmark is known as the Type I Error Rate. In the bootstrap sample of the distribution of means, we saw $P_{0.9047}$. The two-sample Z-Test generated $P_{0.8964}$, and in the Logistic Regression testing, the P-Value was $P_{0.1912}$.<br><br>
 In the above analysis, we found that in the raw data the treatment group did not convert to the new page at a better rate than the control group. Bootstrap sampling was conducted for hypothesis testing asuming the conversion rate was the same for both groups. The A/B probability testing failed to reject the null. The two-sample z-test yielded simmilar results. Finally, the logistic regression testing was conducted, again yielding similar results.<br><br>
 In the end, we have failed to reject our null hypothesis and the treatment group did not get better results than the control group. Based on these results, the old landing page should remain and the new landing page should be discarded.</p>
 
